@@ -18,11 +18,16 @@
 
   <!-- Theme CSS Goes Here -->
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
 
   <!-- Theme JavaScript Goes Here -->
   <script src="http://code.jquery.com/jquery.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js" type="text/javascript"></script>
 </head>
 <body <?php body_class(); ?>>
-
+  <h1 id="header">
+    <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
+  </h1>
+<?php bloginfo('description'); ?>
   <div id="wrapper">
