@@ -2,15 +2,18 @@
 <div class="col-md-8">
   <?php if(have_posts()) : ?>
 		   <?php while(have_posts()) : the_post(); ?>
-			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<?php the_title('<h2>','</h2>'); ?>
-        <div class="thumbnail">
+			<div id="post-<?php the_ID(); ?>" class="center-block">
+				<a href="<?php the_permalink(); ?>"><?php the_title('<h2>','</h2>'); ?></a>
+        <small>Writen in <i class="fa fa-calendar"></i>
+ <?php the_time('F jS, Y') ?> by <i class="fa fa-user"></i>
+ <?php the_author() ?></small>
+        <div class="img-rounded">
        <a href="<?php the_permalink(); ?>"> <?php if ( has_post_thumbnail() ) {
-                the_post_thumbnail('index-size');
+                the_post_thumbnail('thumbnail','class=img-rounded');
             }
         ?></a>
       </div>
-		 		<?php the_excerpt(); ?> <a class="btn-info " href="<?php the_permalink(); ?>">Read More</a>
+		 		<?php the_excerpt(); ?> <a class="btn-info btn" href="<?php the_permalink(); ?>">Read More</a>
 			</div>
 
        <?php endwhile; ?>
