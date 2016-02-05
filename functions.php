@@ -3,14 +3,17 @@
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'title-tag' );
+
 //Add menu support and register main menu
-if ( function_exists( 'register_nav_menus' ) ) {
-  	register_nav_menus(
-  		array(
-  		  'main_menu' => 'Main Menu'
-  		)
-  	);
+function register_my_menus() {
+  register_nav_menus(
+    array(
+      'main-menu' => __( 'Main Menu' ),
+      'hide-menu' => __( 'Hide Menu' )      
+    )
+  );
 }
+add_action( 'init', 'register_my_menus' );
 //  Main Sidebar
     if(function_exists('register_sidebar'))
          register_sidebar(array(
